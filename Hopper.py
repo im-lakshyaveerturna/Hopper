@@ -61,7 +61,7 @@ pygame.init()
 start_time = 0
 game_active = True
 screen = pygame.display.set_mode((800, 400))
-bg = pygame.image.load('downloads/hopperbg.jpeg').convert_alpha()
+bg = pygame.image.load('hopperbg.jpeg').convert_alpha()
 bg1 = pygame.transform.scale(bg, (800, 400))
 gscore = 0
 
@@ -69,9 +69,9 @@ font = pygame.font.Font(None, 75)
 
 #Obstacles:
 
-enemy = pygame.image.load('downloads/pyrat.png').convert_alpha()
+enemy = pygame.image.load('pyrat.png').convert_alpha()
 zombie = pygame.transform.scale(enemy, (75,75))
-pybat = pygame.image.load('downloads/pybat.png').convert_alpha()
+pybat = pygame.image.load('pybat.png').convert_alpha()
 bat = pygame.transform.scale(pybat, (50,50)) 
 obstacle_rect_list = [] 
 
@@ -82,32 +82,32 @@ pygame.time.set_timer(obstacle_timer,2000)
 
 
 #Main character:-
-pyrunner = pygame.image.load('downloads/runner.png').convert_alpha()
+pyrunner = pygame.image.load('runner.png').convert_alpha()
 runner1 = pygame.transform.scale(pyrunner, (75,75))
-pyrunner2 = pygame.image.load('downloads/runner2.png').convert_alpha()
+pyrunner2 = pygame.image.load('runner2.png').convert_alpha()
 runner2 = pygame.transform.scale(pyrunner2, (75,75))
 
 runner_run = [runner1,runner2]
 index = 0
-jump = pygame.image.load('downloads/jump.png').convert_alpha()
+jump = pygame.image.load('jump.png').convert_alpha()
 runner = runner_run[int(index)]
 runner_rect = runner.get_rect(midright = (150, 307) )
 
 runner_g = 0
-runner_stand = pygame.image.load('downloads/pyrunner.png').convert_alpha()
+runner_stand = pygame.image.load('pyrunner.png').convert_alpha()
 runner_stand1 = pygame.transform.scale(pyrunner, (150,150))
 runnner_stand1_rect = runner_stand1.get_rect(midbottom = (400, 307))
 
 #Music
 
-pygame.mixer.Sound('downloads/hopperbgsound.mp3')
+pygame.mixer.Sound('hopperbgsound.mp3')
 
 pygame.display.set_caption('Hopper')
 
 clock = pygame.time.Clock()
 
 while True:
-    bgsound = pygame.mixer.Sound('downloads/hopperbgsound.mp3')
+    bgsound = pygame.mixer.Sound('hopperbgsound.mp3')
     bgsound.play()
  #Key conrols:-    
     for event in pygame.event.get():
@@ -120,7 +120,7 @@ while True:
 
                 
                     runner_g = -25
-                    jsound = pygame.mixer.Sound('downloads/hopperbgsound.mp3')
+                    jsound = pygame.mixer.Sound('hopperbgsound.mp3')
                     jsound.play()
 
 
@@ -190,7 +190,7 @@ while True:
         go_rect = go.get_rect(midbottom = (400, 70))
         screen.blit(go, go_rect)
 
-        runner_stand = pygame.image.load('downloads/pyrunner.png').convert_alpha()
+        runner_stand = pygame.image.load('pyrunner.png').convert_alpha()
         runner_standa = pygame.transform.scale(pyrunner, (150,150))
         runner_standa_rect = runner_stand1.get_rect(midbottom = (385, 350))
         screen.blit(runner_standa, runner_standa_rect )
