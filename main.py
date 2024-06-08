@@ -50,12 +50,7 @@ def player_animations():
         
         if index >= len(runner_run):
             index = 0
-        runner = runner_run[int(index)]
-
-
-    
-
-       
+        runner = runner_run[int(index)]    
 
 pygame.init()
 start_time = 0
@@ -69,8 +64,8 @@ font = pygame.font.Font(None, 75)
 
 #Obstacles:
 
-enemy = pygame.image.load('pyrat.png').convert_alpha()
-zombie = pygame.transform.scale(enemy, (75,75))
+enemy = pygame.image.load('zombies.png').convert_alpha()
+zombie = pygame.transform.scale(enemy, (80,95))
 pybat = pygame.image.load('pybat.png').convert_alpha()
 bat = pygame.transform.scale(pybat, (50,50)) 
 obstacle_rect_list = [] 
@@ -94,7 +89,7 @@ runner = runner_run[int(index)]
 runner_rect = runner.get_rect(midright = (150, 307) )
 
 runner_g = 0
-runner_stand = pygame.image.load('pyrunner.png').convert_alpha()
+runner_stand = pygame.image.load('runner.png').convert_alpha()
 runner_stand1 = pygame.transform.scale(pyrunner, (150,150))
 runnner_stand1_rect = runner_stand1.get_rect(midbottom = (400, 307))
 
@@ -122,12 +117,6 @@ while True:
                     runner_g = -25
                     jsound = pygame.mixer.Sound('hopperbgsound.mp3')
                     jsound.play()
-
-
-                    
-
-            
-
         
 
         else: 
@@ -147,42 +136,26 @@ while True:
             else:
                 obstacle_rect_list.append(zombie.get_rect(midbottom = (randint(900,1100),307)))
  
-                    
-
-
-
-
-
 
     if game_active:
             #Screen Blits
             screen.blit(bg1,(0,0))
             gscore = display_score()
-
-
+        
             #Gravity
             runner_g +=1
             runner_rect.y += runner_g
-
 
             if runner_rect.bottom >= 307:
                 runner_rect.bottom =307
             player_animations()
             screen.blit(runner,runner_rect )
-
-
         
-
-
-           #Collision
-           
+           #Collision         
             game_active = collision(runner_rect, obstacle_rect_list)           
             obstacle_rect_list = obstacle_movement(obstacle_rect_list)
 
     else:
-
-        
-       
         obstacle_rect_list.clear()
         runner_rect.midbottom = (150,307)
         screen.fill((94, 129, 162))
@@ -204,14 +177,7 @@ while True:
         ins_rect = ins.get_rect(midbottom = (400,390))
         screen.blit(ins, ins_rect)
         soman = True
-        time2 = pygame.time.get_ticks()/1000
-        
-        
-
-
-
-
-                
+        time2 = pygame.time.get_ticks()/100
                         
 
 
